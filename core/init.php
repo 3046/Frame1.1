@@ -21,6 +21,7 @@ header("Content-type: text/html; charset=utf-8");
 if(!defined('APP')){
     // 取/xtest/index.php xtest部分
     define('APP',  substr($_SERVER['PHP_SELF'],1,strlen($_SERVER['PHP_SELF'])-11)); 
+    // fix for local
     $strArr = explode("/",APP);
     $strSize = count($strArr);
     define('APP1', $strArr[$strSize - 1]);
