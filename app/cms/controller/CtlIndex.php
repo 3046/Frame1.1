@@ -41,7 +41,7 @@ class CtlIndex extends Controller{
     }
     
     function login(){
-        // for user login
+        // for user logining
     }
     
     
