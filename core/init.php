@@ -30,7 +30,7 @@ if(!defined('APP')){
 define('PATH_ROOT', dirname(dirname(__FILE__))); 
 define('PATH_APP',PATH_ROOT.'/app');        // /root/app 
 
-define('PATH_CUR_APP',PATH_APP.'/'.APP);        // -> /root/app/appA
+define('PATH_CUR_APP',PATH_APP.'/'.APP1);        // -> /root/app/appA
 define('PATH_TEMP',PATH_CUR_APP.'/template');   // -> /root/app/appA/template
 define('PATH_MOD',PATH_CUR_APP.'/model');      // -> /root/app/appA/model
 define('PATH_CTL',PATH_CUR_APP.'/controller');     // -> /root/app/appA/controller
