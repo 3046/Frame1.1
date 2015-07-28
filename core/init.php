@@ -25,6 +25,7 @@ if(!defined('APP')){
     $strArr = explode("/",APP);
     $strSize = count($strArr);
     define('APP1', $strArr[$strSize - 1]);
+    // fix by aleck 2015.7.28
 }
 
 // APP需要Include之前定义,DEFINE,单个单词不超过5个字母
