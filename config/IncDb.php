@@ -7,7 +7,7 @@
  * $this->dbLocation -> location 配置
  * $this->db -> defaut配置
  */
-$user['db'] = 'qq163_user'; // 兼容数据后台,须写db
+$user['db'] = 'db_auth'; // 兼容数据后台,须写db
 
 $user['master']['host'] = 'localhost:3306';
 $user['master']['user']  = 'root'; 

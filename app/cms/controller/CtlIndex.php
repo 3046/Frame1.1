@@ -5,49 +5,49 @@
  *
  * @author dvinci
  */
-class CtlIndex extends Controller{
+class CtlIndex extends Controller {
+
     //put your code here
-    
-    
-    function index(){
+
+
+    function index() {
         //throw new RuntimeException('禁止访问',100);
-        $value = "
-<?xml version=\"1.0\" encoding=\"UTF-8\"?>
-<callbackReq>
-<orderid>2015052010201410693008lt</orderid>
-</callbackReq>
-";
+/*        $value = "
+                <?xml version=\"1.0\" encoding=\"UTF-8\"?>
+                <callbackReq>
+                <orderid>2015052010201410693008lt</orderid>
+                </callbackReq>
+                ";
         var_dump($this->xml_to_array($value));
-        exit;
+        exit; */
+      LibTemplate::assign("userName", "aleck");
+      LibTemplate::assign("password", "123");
+      $this->tpl="index.tpl";
     }
-    private function xml_to_array( $xml ){
+
+    private function xml_to_array($xml) {
         $reg = "/<(\w+)[^>]*>([\\x00-\\xFF]*)<\\/\\1>/";
-        if(preg_match_all($reg, $xml, $matches))
-        {
+        if (preg_match_all($reg, $xml, $matches)) {
             $count = count($matches[0]);
-            for($i = 0; $i < $count; $i++)
-            {
-                $subxml= $matches[2][$i];
+            for ($i = 0; $i < $count; $i++) {
+                $subxml = $matches[2][$i];
                 $key = $matches[1][$i];
-                if(preg_match( $reg, $subxml ))
-                {
-                    $arr[$key] = $this->xml_to_array( $subxml );
-                }else{
+                if (preg_match($reg, $subxml)) {
+                    $arr[$key] = $this->xml_to_array($subxml);
+                } else {
                     $arr[$key] = $subxml;
                 }
             }
         }
         return $arr;
     }
-    
-    function login(){
-        
-    }
-    
-    
-    function logout(){
-        
-    }
-    
-}
 
+    function login() {
+        
+    }
+
+    function logout() {
+        
+    }
+
+}
